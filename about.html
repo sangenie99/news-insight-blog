@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About - Insight News</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;600;700&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#f8f9fb",
+                    "on-primary-fixed": "#000767",
+                    "inverse-primary": "#bdc2ff",
+                    "secondary-fixed-dim": "#9ecaff",
+                    "primary": "#000666",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#7b2e12",
+                    "primary-fixed": "#e0e0ff",
+                    "secondary-container": "#33a0fd",
+                    "on-primary-container": "#8690ee",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-container": "#eceef0",
+                    "surface": "#f8f9fb",
+                    "on-surface": "#191c1e",
+                    "outline": "#767683",
+                    "outline-variant": "#c6c5d4",
+                    "on-secondary-fixed-variant": "#00497d",
+                    "on-secondary-container": "#00355c",
+                    "on-surface-variant": "#454652",
+                    "secondary": "#0061a4",
+                    "surface-tint": "#4c56af",
+                    "on-tertiary-fixed": "#390c00",
+                    "on-secondary-fixed": "#001d36",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#5c1800",
+                    "primary-fixed-dim": "#bdc2ff",
+                    "surface-variant": "#e0e3e5",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f2f4f6",
+                    "tertiary": "#380b00",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#1a237e",
+                    "tertiary-fixed": "#ffdbd0",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#e17c5a",
+                    "on-primary-fixed-variant": "#343d96",
+                    "surface-dim": "#d8dadc",
+                    "secondary-fixed": "#d1e4ff",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-bright": "#f8f9fb",
+                    "inverse-surface": "#2d3133",
+                    "inverse-on-surface": "#eff1f3",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "on-background": "#191c1e",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "baseline": "8px",
+                    "gutter": "16px",
+                    "section-padding": "40px",
+                    "stack-sm": "8px",
+                    "container-margin": "20px",
+                    "stack-lg": "32px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Newsreader"],
+                    "display-lg": ["Newsreader"],
+                    "body-md": ["Public Sans"],
+                    "headline-lg-mobile": ["Newsreader"],
+                    "headline-lg": ["Newsreader"],
+                    "label-lg": ["Public Sans"],
+                    "label-md": ["Public Sans"],
+                    "body-lg": ["Public Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "600"}],
+                    "headline-lg": ["30px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f8f9fb;
+            color: #191c1e;
+            font-family: 'Public Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(248,249,251,1) 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(224, 228, 232, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant">
+<div class="flex justify-between items-center px-gutter h-16 w-full max-w-7xl mx-auto">
+<button class="text-primary hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-display-lg text-headline-lg-mobile text-primary">Insight News</h1>
+<button class="text-primary hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<main class="flex-grow pt-16 pb-24 md:pb-8">
+<!-- Hero Section -->
+<section class="relative w-full h-[530px] flex items-center justify-center overflow-hidden">
+<img alt="Journalistic clarity" class="absolute inset-0 w-full h-full object-cover" data-alt="A high-angle, wide shot of a modern, minimalist newsroom characterized by clean white surfaces and deep navy accents. The environment is flooded with soft, natural morning light, creating a calm and intellectual atmosphere. Several large, thin digital screens display intricate data visualizations and maps in a corporate modern style. The overall mood is professional, serene, and focused on clarity and precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW6F-MTbv2AJ0XqhbcFqvxybAxgdtC_eu_AyZrEl9ZHWTGBd-035_9Qm7bukPELOCa0Uw_DKJeVaKs-GB5mCgfke5W1zpBHdpHUzQnXRdAplzWGsHFLUd5OV9EUbTdt_j2dAD_RCdniFahESE5izpvFQX3elpDhNUCp-MWXiW7nnxXLBUn1qFrvRER3_A-R9CLyJoP99B1WLh2zWg-ORo0vhr04bdmbvwXGRYPfJPPN2Oa55_8Fl_FDfTqRRbUrwCp2jZ4RnhAmZw"/>
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="relative z-10 px-gutter text-center max-w-4xl mx-auto">
+<span class="font-label-lg text-label-lg text-secondary uppercase tracking-widest mb-4 block">About Us</span>
+<h2 class="font-display-lg text-4xl md:text-5xl text-primary mb-6">Clarifying complexity in an age of noise.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    We believe the world doesn't need more news—it needs more understanding. Insight News is dedicated to the slow, meticulous work of deep analysis.
+                </p>
+</div>
+</section>
+<!-- Our Mission: Asymmetric Layout -->
+<section class="px-gutter py-stack-lg max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7">
+<div class="mb-4 flex items-center gap-2">
+<div class="w-8 h-[1px] bg-secondary"></div>
+<span class="font-label-lg text-label-lg text-secondary">Our Mission</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-stack-md">Democratizing Knowledge through Depth</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed">
+                    In a media landscape dominated by breaking headlines and 24-hour cycles, the "why" often gets lost in the "what." Our mission is to restore context to the conversation. We provide rigorous, long-form analysis that transcends the immediate to uncover the structural forces shaping our world.
+                </p>
+<div class="flex flex-col gap-4">
+<div class="flex items-start gap-4 p-4 border-l-2 border-primary bg-surface-container-low">
+<span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-primary">Unbiased Skepticism</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">We question narratives, including our own, to ensure the highest standard of objectivity.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 relative">
+<div class="aspect-square bg-surface-variant rounded-lg overflow-hidden border border-outline-variant">
+<img alt="Complex connectivity" class="w-full h-full object-cover grayscale opacity-80" data-alt="A sophisticated close-up of a digital map showing global connectivity through delicate, glowing threads of light on a deep navy background. The visual style is minimalist and corporate, emphasizing data precision and global reach. Soft blue highlights illuminate the connections, creating a sense of technical mastery and depth. The aesthetic is clean, modern, and perfectly aligned with a high-end news blog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6wZZ_SiBfw_qYpHvXCkQjhoV-iCh0dsF-3NdXSrzgzzIbFdsaLqrJ4yDfLRSZ714zTUsMxvaqsme-GP4QJ-TZT08cHsbLf7SOX8yESqDji93HgHs50lFHrlYgmgx25ekzAT2vh_2SMCwzQi3OB17Cjx2WRtV7scafSHNmjQ5TwvZ9xg7k9vKAjJElAB9vjuL6QUhBpLcFv0wtNVxRUVEKSnsNfwjqAAfAZfeMTU23i-teuwJk5mRbpnMTgGtNWFhSC-r41_dafY4"/>
+</div>
+<div class="absolute -bottom-6 -left-6 p-6 glass-card rounded shadow-sm hidden md:block">
+<p class="font-display-lg text-primary text-5xl">100+</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Deep Dives Monthly</p>
+</div>
+</div>
+</section>
+<!-- Analysis Methodology: Bento Grid -->
+<section class="bg-surface-container-lowest py-section-padding px-gutter">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-stack-lg">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-2">Analysis Methodology</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">How we bridge the gap from data to insight.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Bento Card 1 -->
+<div class="md:col-span-2 p-8 border border-outline-variant rounded-lg flex flex-col justify-between hover:border-secondary transition-colors group">
+<div>
+<span class="material-symbols-outlined text-secondary text-4xl mb-4 group-hover:scale-110 transition-transform block" data-icon="database">database</span>
+<h4 class="font-headline-md text-headline-md text-primary mb-4">First-Principles Data Retrieval</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">We don't rely on secondary reports. Our analysts work directly with raw datasets, public records, and primary sources to ensure every conclusion is built on a bedrock of verifiable fact.</p>
+</div>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant font-label-md text-label-md rounded">Transparency</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant font-label-md text-label-md rounded">Integrity</span>
+</div>
+</div>
+<!-- Bento Card 2 -->
+<div class="p-8 bg-primary text-on-primary rounded-lg flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-5xl mb-4" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<h4 class="font-headline-md text-headline-md mb-2">The Expert Review</h4>
+<p class="font-body-md text-body-md opacity-80">Every piece is vetted by subject matter experts before publication.</p>
+</div>
+<!-- Bento Card 3 -->
+<div class="p-8 border border-outline-variant rounded-lg flex flex-col justify-between hover:border-secondary transition-colors">
+<h4 class="font-label-lg text-label-lg text-secondary mb-4">Phase 03</h4>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Contextual Synthesis</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">We connect disparate events to reveal the underlying trends often missed by rapid-fire news outlets.</p>
+</div>
+</div>
+<!-- Bento Card 4 -->
+<div class="md:col-span-2 relative overflow-hidden rounded-lg border border-outline-variant h-64 md:h-auto">
+<img alt="Data visualization" class="absolute inset-0 w-full h-full object-cover" data-alt="A clean, minimalist digital dashboard displaying sophisticated bar charts and line graphs in shades of navy, slate, and bright white. The lighting is crisp and cool, suggesting a professional analytics environment. The charts are crisp and well-spaced, avoiding clutter to maintain a premium corporate aesthetic. The mood is analytical, quiet, and deeply focused on information clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA67llnR750txgt9sfipsEAd12mdoGypi57o7kyjlJ9VBioDDOFOrnKIRi1WiM0IJGcwwo_PNwYr-xw_TnWC5dZnBMPmQ5cPbCmIjJ93e4rG2Ik30szdJ0-LQ7mvH1Pymbl-xWSLQbRGwO-ofRmrVwA24ymUb5YBTOGszOWDtJjRR41iE8jglVhVBarxD_EqPkG3oLW8hwjCoMusRdwpB6Slguj4u_dSLtus7DVXeomxdrwD_N2WJl2mMCuwGDGjcwHq4fqSo85g58"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-8">
+<p class="text-on-primary font-headline-md text-headline-md">Visualizing the invisible through rigorous mapping.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Meet the Team -->
+<section class="py-section-padding px-gutter max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-stack-lg">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-primary">Meet the Team</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">The minds behind the analysis.</p>
+</div>
+<button class="text-secondary font-label-lg text-label-lg flex items-center gap-1 hover:underline">
+                    View Careers <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Team Member 1 -->
+<div class="group">
+<div class="aspect-[3/4] bg-surface-container-high rounded-sm mb-4 overflow-hidden relative">
+<img alt="Team lead" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A professional headshot of a confident editor in a modern, brightly lit studio. The individual is wearing a charcoal suit over a white shirt, projecting authority and experience. The lighting is soft and directional, creating subtle shadows that define the face. The background is a clean, neutral gray, keeping the focus entirely on the person. The overall aesthetic is minimalist, premium, and trustworthy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEbdTmPBjxI-AsrbbIFRid_E2HGcc6U8vo80IgcKjK-6AWlMmRjfe3kc8vPM5XwU0W2w6ALdW6DP2UqCAWKSULLms4pjn_HRJRsgjaorOLKuKU6jpbAjLdqkpN2tUdsLtNPJGvBOjA7ksZ_PFZSoqRpOw-BTcVuQOQZooJ0Ed5g07V5LEy9jLpY94LXQHds_B3j6Tm-EV8aHJXMmzRppafP4l-85_wAIaLffUutrvi7E0SKYnAptN2izply1z8SwDwLFCuwvmPkt0"/>
+</div>
+<h5 class="font-label-lg text-label-lg text-primary">Julian Vance</h5>
+<p class="font-label-md text-label-md text-on-surface-variant">Editor-in-Chief</p>
+</div>
+<!-- Team Member 2 -->
+<div class="group">
+<div class="aspect-[3/4] bg-surface-container-high rounded-sm mb-4 overflow-hidden relative">
+<img alt="Lead analyst" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A professional portrait of a senior analyst in a minimalist office setting. The person is wearing a navy blue blazer and has a focused, intelligent expression. Natural window light illuminates one side of the face, creating a classic corporate look. The background is a blurred architectural space with clean lines and soft white tones. The mood is reliable and intellectually rigorous." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCPMS_q_SYb3X1OSV4HhfU0c6N6CBfZByzzYIyVAg7jGN9USeJ1V-j2EyQ61EBQvkHa7Snk2Z1AY0-AZir79VdBpePehX8F7uR8oZnwMxAYXC41MYM8LQQqoICQdm6ibFvjchoBjY_YXBxNmKmJ4097_SL06r50WG6c3Kh15Z8DG6qlE9mNcYdKaCohQR1XTOovKHQHBtSelNHRINN8tRFBHysuv6-5pe8_62mxAAhu4mHKuH2Pqjumb_SLPtfaEIGvFc7Yutlws0"/>
+</div>
+<h5 class="font-label-lg text-label-lg text-primary">Dr. Elena Rossi</h5>
+<p class="font-label-md text-label-md text-on-surface-variant">Lead Data Analyst</p>
+</div>
+<!-- Team Member 3 -->
+<div class="group">
+<div class="aspect-[3/4] bg-surface-container-high rounded-sm mb-4 overflow-hidden relative">
+<img alt="Geopolitical expert" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A high-end editorial headshot of a geopolitical specialist. The individual has a seasoned look, wearing a light gray linen shirt in a modern, sun-drenched library or study. The focus is sharp on the face, with a very shallow depth of field. The lighting is warm and natural, emphasizing a human and approachable yet deeply knowledgeable persona. The color palette is composed of neutrals and soft earth tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVRzx2SnL9PaJD451_mK67ofVQqfcdL9WxxCbsASyfN-Rna5ynYtxRxl4IfWku2rPZKQNl3jUskRSdSHvDeirRQ2Gwdkx2xXqANU9nTnliOQJrlOiFaBiPpqrip2P8jALLFUwAkURFvpr5c95zBAwQua5hYDbAKUQVTpU4T075d8q4ufv3Iho0N5wTNyWglXHul-Ehi4Q6pdU0F3dI4UzQ59Ezh2Z0ZyaCmuGaJGK3DNdP_ny2xqZhtcjFHtkgDvLYmWp-fwIB_kI"/>
+</div>
+<h5 class="font-label-lg text-label-lg text-primary">Marcus Thorne</h5>
+<p class="font-label-md text-label-md text-on-surface-variant">Geopolitical Strategist</p>
+</div>
+<!-- Team Member 4 -->
+<div class="group">
+<div class="aspect-[3/4] bg-surface-container-high rounded-sm mb-4 overflow-hidden relative">
+<img alt="Tech analyst" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A striking portrait of a technology analyst against a clean, white background. The subject is wearing modern, minimalist glasses and a dark turtleneck, looking directly at the camera with clarity. The lighting is perfectly balanced, high-key, and professional. The aesthetic is sharp, digital-first, and highly modern, reflecting a focus on future trends and technical precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoZ0XDLAPPRGb9h3YF1Vtl3UzxmCCRL9MV4nJXz8p4U-cxxGXwNM9yqi6dw98ZXGiG_rReuL26QratRkxasn-d6RKYZN6EnuIyaHwgep0_D4gjNBStnMrpSTplo98vWsGc0qok-CDPjolQcQoMq7sPGMYag2ceokzp3RtsLKDkBnYX_wkWzqbz9cuS8CTknvC-NEioa-_nWjRFdzMr6OZuCCbJlc9zKUS1bd1HIk9KzTtHVH8Bgdjggir_KevsSr6fpIUcsgkgVZA"/>
+</div>
+<h5 class="font-label-lg text-label-lg text-primary">Sarah Chen</h5>
+<p class="font-label-md text-label-md text-on-surface-variant">Tech Policy Lead</p>
+</div>
+</div>
+</section>
+<!-- Newsletter CTA -->
+<section class="px-gutter mb-stack-lg">
+<div class="max-w-4xl mx-auto bg-surface-container border border-outline-variant p-8 md:p-12 text-center rounded-lg">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-4">Invest in your understanding.</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Join 50,000+ readers who receive our weekly deep-dive analysis directly in their inbox.</p>
+<form class="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
+<input class="flex-grow bg-white border-outline-variant border rounded-lg px-4 py-3 focus:border-secondary focus:ring-0 text-body-md font-body-md" placeholder="Email address" type="email"/>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-label-lg text-label-lg hover:opacity-90 transition-opacity" type="submit">Subscribe</button>
+</form>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-2 pb-safe bg-surface shadow-[0px_-4px_12px_rgba(0,0,0,0.05)] z-50">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Analysis</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary bg-secondary-fixed rounded-full px-4 py-1 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="info" style="font-variation-settings: 'FILL' 1;">info</span>
+<span class="font-label-md text-label-md">About</span>
+</a>
+</nav>
+<!-- Footer (Desktop) -->
+<footer class="hidden md:block py-12 border-t border-outline-variant bg-surface">
+<div class="max-w-7xl mx-auto px-gutter grid grid-cols-4 gap-8">
+<div class="col-span-1">
+<h2 class="font-display-lg text-headline-lg-mobile text-primary mb-4">Insight News</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Restoring the depth of global discourse through first-principles analysis.</p>
+</div>
+<div class="col-span-1">
+<h6 class="font-label-lg text-label-lg text-primary mb-4">Sections</h6>
+<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-secondary" href="#">Geopolitics</a></li>
+<li><a class="hover:text-secondary" href="#">Technology</a></li>
+<li><a class="hover:text-secondary" href="#">Economy</a></li>
+<li><a class="hover:text-secondary" href="#">Society</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h6 class="font-label-lg text-label-lg text-primary mb-4">Company</h6>
+<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-secondary" href="#">About</a></li>
+<li><a class="hover:text-secondary" href="#">Methodology</a></li>
+<li><a class="hover:text-secondary" href="#">Team</a></li>
+<li><a class="hover:text-secondary" href="#">Ethics Policy</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h6 class="font-label-lg text-label-lg text-primary mb-4">Connect</h6>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="public">public</span></a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="alternate_email">alternate_email</span></a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-gutter mt-12 pt-8 border-t border-outline-variant flex justify-between items-center text-on-surface-variant font-label-md text-label-md">
+<span>© 2024 Insight News Analysis Group</span>
+<div class="flex gap-6">
+<a href="#">Privacy</a>
+<a href="#">Terms</a>
+<a href="#">Cookies</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for scroll fade
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    section.classList.add('opacity-100', 'translate-y-0');
+                    section.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        });
+
+        // Initial setup for sections
+        document.querySelectorAll('section').forEach((section, i) => {
+            if (i > 0) {
+                section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
+            }
+        });
+        
+        // Trigger first check
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body></html>

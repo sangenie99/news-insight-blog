@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&amp;family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#f8f9fb",
+                    "on-primary-fixed": "#000767",
+                    "inverse-primary": "#bdc2ff",
+                    "secondary-fixed-dim": "#9ecaff",
+                    "primary": "#000666",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#7b2e12",
+                    "primary-fixed": "#e0e0ff",
+                    "secondary-container": "#33a0fd",
+                    "on-primary-container": "#8690ee",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-container": "#eceef0",
+                    "surface": "#f8f9fb",
+                    "on-surface": "#191c1e",
+                    "outline": "#767683",
+                    "outline-variant": "#c6c5d4",
+                    "on-secondary-fixed-variant": "#00497d",
+                    "on-secondary-container": "#00355c",
+                    "on-surface-variant": "#454652",
+                    "secondary": "#0061a4",
+                    "surface-tint": "#4c56af",
+                    "on-tertiary-fixed": "#390c00",
+                    "on-secondary-fixed": "#001d36",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#5c1800",
+                    "primary-fixed-dim": "#bdc2ff",
+                    "surface-variant": "#e0e3e5",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f2f4f6",
+                    "tertiary": "#380b00",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#1a237e",
+                    "tertiary-fixed": "#ffdbd0",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#e17c5a",
+                    "on-primary-fixed-variant": "#343d96",
+                    "surface-dim": "#d8dadc",
+                    "secondary-fixed": "#d1e4ff",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-bright": "#f8f9fb",
+                    "inverse-surface": "#2d3133",
+                    "inverse-on-surface": "#eff1f3",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "on-background": "#191c1e",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "baseline": "8px",
+                    "gutter": "16px",
+                    "section-padding": "40px",
+                    "stack-sm": "8px",
+                    "container-margin": "20px",
+                    "stack-lg": "32px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Newsreader"],
+                    "display-lg": ["Newsreader"],
+                    "body-md": ["Public Sans"],
+                    "headline-lg-mobile": ["Newsreader"],
+                    "headline-lg": ["Newsreader"],
+                    "label-lg": ["Public Sans"],
+                    "label-md": ["Public Sans"],
+                    "body-lg": ["Public Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "600"}],
+                    "headline-lg": ["30px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .reading-progress-bar {
+            height: 2px;
+            width: 0%;
+            background-color: #0061a4;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            transition: width 0.1s ease;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<div class="reading-progress-bar" id="progress"></div>
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant">
+<div class="flex justify-between items-center px-gutter h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+<h1 class="font-display-lg text-headline-lg-mobile text-primary tracking-tight">Insight News</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-primary">search</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-gutter max-w-4xl mx-auto">
+<article class="space-y-stack-lg">
+<header class="space-y-stack-md">
+<div class="flex items-center gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md">Deep Dive</span>
+<span class="text-on-surface-variant font-label-md text-label-md">Published 4 hours ago</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-primary-fixed leading-tight">
+                    The Silent Shift: How Decoupling is Redefining Global Supply Chains for 2025
+                </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic leading-relaxed">
+                    A comprehensive analysis of the multi-nodal transition in manufacturing and the emergence of "Resilience Corridors" across Southeast Asia and Latin America.
+                </p>
+<div class="flex items-center gap-3 pt-4 border-b border-outline-variant pb-6">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="Journalist portrait" class="w-full h-full object-cover" data-alt="A professional portrait of a senior financial analyst in a modern, brightly lit office environment. He is wearing a minimalist navy blue suit and glasses, projecting an air of intellectual authority. The background is softly blurred, showing a clean, white-walled architectural space with soft natural lighting and a corporate modernism aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5Swgoa9mgSIdiMhbJ2ZA98PInv_ReVyyJ4Jq8Xym0gAsTq2ZidDOASXmpJ50izitJ6HZst6I-IAQca_D01aPxK2yLaKU7zqRlzCOo4m23h-fCgJrcpOnhq-GY4alNlukBM5pRZWqlCd0EdMycmRxKHWGHGFh37unhROYGZhzCLLZWIcx0AdZua1ZDqBqdNTZRmJzEa9qSxqHzXzQWaelCYRMPmPtJSwR-TZATtHfQ_sA_7FJbrL1q6BShpwtth8ZiYPvNv6NCOrE"/>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Elena Vance</p>
+<p class="font-label-md text-label-md text-outline">Chief Economic Correspondent</p>
+</div>
+</div>
+</header>
+<section class="space-y-stack-md">
+<div class="w-full aspect-video rounded-lg overflow-hidden relative group">
+<img alt="Modern architecture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-angle, wide-angle shot of a sprawling, state-of-the-art logistics hub at dawn. The architecture is sharp and minimalist, with glass and steel reflecting the cool blue and soft orange light of the rising sun. The mood is industrial yet serene, emphasizing efficiency and technological precision in a global trade context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoDigGkdqlX2tux-RxGHXe74hiDRZSr0BzCsqfJxmiTqGbRBiNeBHa4rncpBrKaKWgLe2ME_PInaZ0nlGT5glQOA_7T2rGIqI5QuqqYu0fFxq3jKsj-cS-doOyt2oVgPi0eP0v8zrPEx3LAlrfBhpVjbOJs3GEkKEpiL0Do_rCPKv90T94sA8N1hL3xCR0lC33ZsObJQsmaGnCUVPLBUe7jUywswd6YHzMl2SCQstzBceMMIjX9_OEJbjgpyzDJIWB1t-cC9BpTfc"/>
+<div class="absolute bottom-4 left-4 right-4 p-4 bg-surface/90 backdrop-blur-sm rounded-lg border border-outline-variant">
+<p class="font-label-md text-label-md text-on-surface-variant">Fig 1.1: The 'Nexus Point' in Singapore—a prototype for the next generation of automated transshipment hubs.</p>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="md:col-span-2 space-y-stack-md">
+<h3 class="font-headline-md text-headline-md text-primary">The New Economic Geography</h3>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                        For decades, the global supply chain was a study in centralization. Efficiency was the only metric that mattered, leading to a hyper-optimized, yet fragile, single-source dependency. That era is ending. Our analysis shows a 34% increase in capital expenditure toward diversified manufacturing hubs in Mexico, Vietnam, and Poland over the last 18 months.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                        This isn't merely a move away from one specific region; it is a fundamental shift toward "Friend-shoring" and "Near-shoring"—prioritizing political alignment and geographical proximity over the absolute lowest labor cost.
+                    </p>
+</div>
+<aside class="bg-surface-container-low p-gutter rounded-xl border border-outline-variant h-fit space-y-stack-sm">
+<h4 class="font-label-lg text-label-lg text-secondary uppercase tracking-wider">Key Takeaways</h4>
+<ul class="space-y-3">
+<li class="flex gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<p class="font-label-md text-label-md">34% Rise in Near-Shoring CAPEX</p>
+</li>
+<li class="flex gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<p class="font-label-md text-label-md">Automation closing the labor cost gap</p>
+</li>
+<li class="flex gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<p class="font-label-md text-label-md">Rise of 'Resilience Corridors'</p>
+</li>
+</ul>
+</aside>
+</section>
+<section class="py-stack-lg border-y border-outline-variant space-y-stack-md">
+<div class="flex justify-between items-end">
+<h3 class="font-headline-md text-headline-md text-primary">Regional Growth Indices</h3>
+<div class="flex gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md">Projected 2025</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-white p-6 rounded-lg border border-outline-variant shadow-sm flex flex-col items-center justify-center text-center space-y-2">
+<p class="font-label-md text-label-md text-outline uppercase tracking-widest">Mexico</p>
+<p class="font-display-lg text-display-lg text-secondary">+12.4%</p>
+<div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 85%"></div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg border border-outline-variant shadow-sm flex flex-col items-center justify-center text-center space-y-2">
+<p class="font-label-md text-label-md text-outline uppercase tracking-widest">Vietnam</p>
+<p class="font-display-lg text-display-lg text-secondary">+15.8%</p>
+<div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 92%"></div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg border border-outline-variant shadow-sm flex flex-col items-center justify-center text-center space-y-2">
+<p class="font-label-md text-label-md text-outline uppercase tracking-widest">Poland</p>
+<p class="font-display-lg text-display-lg text-secondary">+9.2%</p>
+<div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 70%"></div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg border border-outline-variant shadow-sm flex flex-col items-center justify-center text-center space-y-2">
+<p class="font-label-md text-label-md text-outline uppercase tracking-widest">India</p>
+<p class="font-display-lg text-display-lg text-secondary">+18.1%</p>
+<div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 98%"></div>
+</div>
+</div>
+</div>
+<p class="font-label-md text-label-md text-outline text-center italic">Source: Insight News Data Intelligence Unit (NDIU)</p>
+</section>
+<section class="space-y-stack-md">
+<h3 class="font-headline-md text-headline-md text-primary">The Automation Equalizer</h3>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                    A critical factor facilitating this migration is the rapid adoption of Level-4 autonomous manufacturing. As robotics become more modular and affordable, the labor arbitrage that once favored centralized manufacturing is evaporating. A factory in Monterrey now operates with roughly the same overhead as one in Shenzhen, when shipping and tariffs are factored in.
+                </p>
+<div class="bg-primary-container text-on-primary-container p-gutter rounded-xl">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-on-primary-container scale-150 mt-1">lightbulb</span>
+<div class="space-y-2">
+<h4 class="font-label-lg text-label-lg">Analysis Summary</h4>
+<p class="font-body-md text-body-md">The "Silent Shift" is not a temporary reaction to geopolitical friction, but a structural re-engineering of how physical goods move through the global economy. Companies that do not diversify their production nodes by 2026 risk becoming stranded in a legacy architecture that is increasingly vulnerable to systemic shocks.</p>
+</div>
+</div>
+</div>
+</section>
+<footer class="pt-stack-lg border-t border-outline-variant flex flex-wrap gap-4 items-center justify-between">
+<div class="flex gap-2">
+<span class="bg-surface-container text-on-surface-variant px-3 py-1 rounded-lg font-label-md text-label-md">Logistics</span>
+<span class="bg-surface-container text-on-surface-variant px-3 py-1 rounded-lg font-label-md text-label-md">Economy</span>
+<span class="bg-surface-container text-on-surface-variant px-3 py-1 rounded-lg font-label-md text-label-md">2025 Outlook</span>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-1 text-secondary font-label-lg hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-[20px]">share</span> Share
+                    </button>
+<button class="flex items-center gap-1 text-secondary font-label-lg hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-[20px]">bookmark</span> Save
+                    </button>
+</div>
+</footer>
+</article>
+<section class="mt-stack-lg space-y-stack-md">
+<h3 class="font-headline-md text-headline-md text-on-surface border-l-4 border-secondary pl-4">Continue Reading</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="group cursor-pointer space-y-2">
+<div class="aspect-video w-full rounded overflow-hidden">
+<img alt="Graph analysis" class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="A macro shot of a sleek tablet screen displaying complex financial data visualizations. Bright blue and orange line graphs intersect against a deep navy background. The lighting is low and focused, creating a high-tech, analytical atmosphere suitable for a premium business journal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIUUIQ-vD8_mT8m2e4ZJ7j2vWSSUG6dTWfAuJNbMXaZ2dBYeXyuEihbFUmKAemyC1lFcny87vRFfvINYWOmOCBhDUhwcTfDAbUmqnh9WqMIPBaK7w4_jASdXEb4BsvnSJYtYr2KciluJ60SOCcshjt82vX_jayj29MX2f0qX8mWJRQfoNaEi0ZNamrWVAglb8MC2bat3-NnhDtDaYX4icyy0I7u4QyOiXL6dejdxo25c6u88b6wxBbK2sZJuh_58_lAChEIZf2Qkw"/>
+</div>
+<h4 class="font-label-lg text-label-lg text-on-surface group-hover:text-secondary transition-colors">Interest Rates: The 18-Month Forecast</h4>
+<p class="font-label-md text-label-md text-outline">Economics • 15 min read</p>
+</div>
+<div class="group cursor-pointer space-y-2">
+<div class="aspect-video w-full rounded overflow-hidden">
+<img alt="Semiconductors" class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="A clean, close-up shot of a silicon wafer with intricate circuitry, glowing under a focused surgical-style light. The aesthetic is extremely clean and technical, using a palette of metallic silvers and deep primary blues. The image conveys the precision and complexity of advanced technological manufacturing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKrZHioEv-PjZu1flCU_7l1dSCEHI0yG0X0tgg36SwUiEcYE0UpMlgiZNqik68PYt_7F73R-UO7yfw3uYogjr8mS1jeu5RvZnshmsPjn402udmNcFIA70vraZFMG_a6FiZMYl_S85Cgjl7JS6KcyM9LQ8FU043wYxN_R8MOd2xHrT-UDVFdiur0C9pPyFyrA7NxFq2JHX5IfiMUm5scDatQePgvUNBeVhj2Hxp9NVkVUXvl3ivx6uJM6C0THQKY1DAccfUHNgN0kk"/>
+</div>
+<h4 class="font-label-lg text-label-lg text-on-surface group-hover:text-secondary transition-colors">The Semiconductor Sovereignty Race</h4>
+<p class="font-label-md text-label-md text-outline">Technology • 12 min read</p>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface shadow-[0px_-4px_12px_rgba(0,0,0,0.05)] flex justify-around items-center px-4 py-2 pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 transition-all duration-300 ease-in-out hover:bg-surface-container" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary bg-secondary-fixed rounded-full px-4 py-1 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-label-md text-label-md">Analysis</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 transition-all duration-300 ease-in-out hover:bg-surface-container" href="#">
+<span class="material-symbols-outlined">info</span>
+<span class="font-label-md text-label-md">About</span>
+</a>
+</nav>
+<script>
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progress").style.width = scrolled + "%";
+        };
+
+        // Subtle parallax and reveal logic
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+            observer.observe(section);
+        });
+    </script>
+</body></html>
